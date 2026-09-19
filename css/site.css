@@ -553,7 +553,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .contact-hero__lead { margin: 56px auto 0; max-width: 660px; font-size: 18px; line-height: 1.5; }
 .contact-hero__status { margin-top: 94px; justify-content: center; }
 
-.form { margin: 190px auto 0; max-width: 1000px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px 42px; }
+.form { margin: 190px auto 0; max-width: 1000px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px 42px; text-align: left; }
 .field { display: block; }
 .field--full { grid-column: 1 / -1; }
 .field__label { display: block; font-size: 18px; }
@@ -565,7 +565,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .field__input::placeholder { color: var(--grey-50); }
 .field__input:focus { border-bottom-color: var(--ink); }
-textarea.field__input { resize: vertical; min-height: 40px; line-height: 1.5; }
+textarea.field__input { resize: none; min-height: 40px; line-height: 1.5; overflow: hidden; }
 select.field__input {
   appearance: none; -webkit-appearance: none;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23121212' stroke-width='1.4'/></svg>") right 4px top 6px / 12px 8px no-repeat;
