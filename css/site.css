@@ -703,8 +703,9 @@ select.field__input:invalid, select.field__input.is-placeholder { color: var(--g
   .co-hero__title { margin-top: 90px; font-size: 32px; }
   .co-hero__sub { margin-top: 18px; font-size: 17px; }
   .co-table { margin-top: 36px; }
-  .co-table__row { grid-template-columns: 130px 1fr; gap: 16px; padding: 26px 0 28px; }
-  .co-table__key { font-size: 16px; }
+  .co-table__row { grid-template-columns: 112px 1fr; gap: 10px; padding: 26px 0 28px; }
+  .co-table__val br { display: none; }
+  .co-table__key { font-size: 15px; }
   .co-table__val { font-size: 17px; }
   .co-table__val small { display: block; margin: 12px 0 0; }
   .approach { padding: 60px var(--gutter) 60px; }
