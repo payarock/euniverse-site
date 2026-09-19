@@ -1,0 +1,6 @@
+.DS_Store
+.claude/
+files.zip
+# working files — not part of the public site
+design/
+content/
