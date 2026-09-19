@@ -17,7 +17,48 @@
     img.addEventListener('error', function () { flagMissing(img); });
   });
 
-  /* 2. Mobile menu */
+  /* 2. Header over a dark hero (Story): light text while the hero is in view,
+        normal text once the page has scrolled past it. */
+  var header = document.querySelector('.site-header');
+  var darkHero = document.querySelector('[data-dark-hero]');
+  if (header && darkHero) {
+    var update = function () {
+      var past = darkHero.getBoundingClientRect().bottom < 60;
+      header.classList.toggle('site-header--light', !past);
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+  }
+
+  /* 3. Select placeholder colour (grey until a topic is chosen) */
+  document.querySelectorAll('select.field__input').forEach(function (sel) {
+    var sync = function () { sel.classList.toggle('is-placeholder', sel.value === ''); };
+    sync(); sel.addEventListener('change', sync);
+  });
+
+  /* 4. Contact form → mailto (until a form service such as Formspree is configured).
+        The <form action> is the single place to swap later. */
+  var form = document.querySelector('form[data-mailto]');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var f = new FormData(form);
+      var subject = 'Enquiry via euniverse.co.jp — ' + f.get('topic');
+      var body = [
+        'Name: ' + f.get('name'),
+        'Company / Organisation: ' + (f.get('company') || '—'),
+        'Email: ' + f.get('email'),
+        'Topic: ' + f.get('topic'),
+        '',
+        f.get('message')
+      ].join('\n');
+      window.location.href = form.getAttribute('data-mailto') +
+        '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    });
+  }
+
+  /* 5. Mobile menu */
   var menu = document.querySelector('.mobile-menu');
   var openBtn = document.querySelector('.icon-btn--menu');
   var closeBtn = document.querySelector('.mobile-menu__close');
