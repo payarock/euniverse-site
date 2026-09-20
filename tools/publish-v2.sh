@@ -19,6 +19,7 @@ PAGES="index.html story.html what-we-do.html noor.html company.html contact.html
 if [ "${1:-}" = "--undo" ]; then
   git checkout HEAD -- index.html v2/
   for p in $PAGES; do [ "$p" = index.html ] || rm -f "$p"; done
+  rm -f sitemap.xml robots.txt
   git add -A
   echo "Undone: root pages removed, previous index.html and v2/ restored (staged)."
   exit 0
@@ -43,6 +44,19 @@ for p in $PAGES; do
 </head><body><p>This page has moved to <a href="/$( [ "$p" = index.html ] && echo "" || echo "$p" )">euniverse.co.jp</a>.</p></body></html>
 HTML
 done
+
+# 3. sitemap + robots for Search Console
+TODAY=$(date +%Y-%m-%d)
+{
+  echo '<?xml version="1.0" encoding="UTF-8"?>'
+  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+  for p in $PAGES; do
+    loc="https://euniverse.co.jp/$( [ "$p" = index.html ] && echo "" || echo "$p" )"
+    echo "  <url><loc>$loc</loc><lastmod>$TODAY</lastmod></url>"
+  done
+  echo '</urlset>'
+} > sitemap.xml
+printf 'User-agent: *\nAllow: /\nDisallow: /v2/\n\nSitemap: https://euniverse.co.jp/sitemap.xml\n' > robots.txt
 
 git add -A
 echo "Promoted. Review, then commit & push:"

@@ -637,7 +637,7 @@ select.field__input:invalid, select.field__input.is-placeholder { color: var(--g
   .contact-hero { padding-top: 150px; }
   .contact-hero__title { font-size: 84px; }
   .form { margin-top: 130px; gap: 70px 32px; }
-  .contact-details { grid-template-columns: 1fr 380px; padding: 90px var(--gutter) 80px; }
+  .contact-details { grid-template-columns: 1fr 320px; padding: 90px var(--gutter) 80px; }
 }
 
 /* ==========================================================================
@@ -645,6 +645,7 @@ select.field__input:invalid, select.field__input.is-placeholder { color: var(--g
    ========================================================================== */
 @media (max-width: 640px) {
   .story-hero { padding: 130px var(--gutter) 120px; min-height: 0; }
+  .story-hero .ph img { object-position: 50% 35%; }
   .story-hero__title { font-size: 46px; line-height: 1.4; }
   .story-hero__lead { margin-top: 44px; font-size: 17px; }
   .timeline { padding: 90px var(--gutter) 60px; }
