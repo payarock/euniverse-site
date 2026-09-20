@@ -532,6 +532,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .director__photo { aspect-ratio: 1440 / 700; background: var(--ink); }
 .director__photo img { object-position: 50% 20%; }
+/* Provisional portrait (3:4 phone photo): show it whole on the ink ground instead of
+   cropping to a tight close-up. Remove the class when the wide studio portrait arrives. */
+.director__photo--provisional img { object-fit: contain; object-position: 50% 50%; }
 .director__text { position: relative; padding: 80px 130px 150px 84px; }
 .director__text::after {
   content: ""; position: absolute; right: 80px; top: 0; bottom: 0; width: 1px; background: var(--accent);
@@ -716,6 +719,7 @@ select.field__input:invalid, select.field__input.is-placeholder { color: var(--g
   .approach .photo--band { aspect-ratio: 390 / 320; }
   .shared { padding: 60px var(--gutter); }
   .director__photo { aspect-ratio: 390 / 660; }
+  .director__photo--provisional { aspect-ratio: 3 / 4; }
   .director__text { padding: 60px var(--gutter) 90px; text-align: center; }
   .director__text::after, .director__text::before { display: none; }
   .director__head { flex-direction: column; gap: 22px; }
