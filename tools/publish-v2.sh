@@ -20,6 +20,7 @@ if [ "${1:-}" = "--undo" ]; then
   git checkout HEAD -- index.html v2/
   for p in $PAGES; do [ "$p" = index.html ] || rm -f "$p"; done
   rm -f sitemap.xml robots.txt
+  rm -rf archive
   git add -A
   echo "Undone: root pages removed, previous index.html and v2/ restored (staged)."
   exit 0
@@ -28,7 +29,10 @@ fi
 [ -f v2/index.html ] || { echo "v2/index.html not found"; exit 1; }
 [ -f CNAME ] || { echo "CNAME missing — refusing to continue"; exit 1; }
 
-# (the provisional v1 index.html stays in git history: commit 2d0f910)
+# keep the provisional v1 page in archive/ (also in git history: commit 2d0f910);
+# it is marked noindex so it never competes with the new Home in search results
+mkdir -p archive
+sed 's|<meta name="robots" content="index, follow">|<meta name="robots" content="noindex">|' index.html > archive/index-v1.html
 
 for p in $PAGES; do
   # 1. copy to root and remove the staging noindex tag
@@ -56,7 +60,7 @@ TODAY=$(date +%Y-%m-%d)
   done
   echo '</urlset>'
 } > sitemap.xml
-printf 'User-agent: *\nAllow: /\nDisallow: /v2/\n\nSitemap: https://euniverse.co.jp/sitemap.xml\n' > robots.txt
+printf 'User-agent: *\nAllow: /\nDisallow: /v2/\nDisallow: /archive/\n\nSitemap: https://euniverse.co.jp/sitemap.xml\n' > robots.txt
 
 git add -A
 echo "Promoted. Review, then commit & push:"

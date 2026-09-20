@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /v2/
+Disallow: /archive/
+
+Sitemap: https://euniverse.co.jp/sitemap.xml
