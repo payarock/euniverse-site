@@ -17,6 +17,10 @@ cd "$(dirname "$0")/.."
 PAGES="index.html story.html what-we-do.html noor.html company.html contact.html"
 
 if [ "${1:-}" = "--undo" ]; then
+  if grep -q 'http-equiv="refresh"' "$(git show HEAD:v2/index.html 2>/dev/null | head -c 2000 >/tmp/.v2head && echo /tmp/.v2head)"; then
+    echo "--undo only works before the launch commit. Roll back with a revert of 2c06579 in GitHub Desktop instead."
+    exit 1
+  fi
   git checkout HEAD -- index.html v2/
   for p in $PAGES; do [ "$p" = index.html ] || rm -f "$p"; done
   rm -f sitemap.xml robots.txt
@@ -27,6 +31,13 @@ if [ "${1:-}" = "--undo" ]; then
 fi
 
 [ -f v2/index.html ] || { echo "v2/index.html not found"; exit 1; }
+# Guard: after the 2026-09-20 launch v2/ holds redirect stubs only. Running the promote
+# step again would overwrite the live pages with those stubs, so refuse.
+if grep -q 'http-equiv="refresh"' v2/index.html; then
+  echo "Already published: v2/ contains redirect stubs, not pages. Nothing to promote."
+  echo "To roll back the launch, revert commit 2c06579 in GitHub Desktop (History → right-click → Revert)."
+  exit 1
+fi
 [ -f CNAME ] || { echo "CNAME missing — refusing to continue"; exit 1; }
 
 # keep the provisional v1 page in archive/ (also in git history: commit 2d0f910);
