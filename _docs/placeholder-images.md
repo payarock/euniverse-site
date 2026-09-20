@@ -1,11 +1,23 @@
-# 仮画像の一覧（最終形）— 2026-09-20
+# 仮画像の一覧（最終形）— 2026-09-20（同日、デザイナー写真の取り込み後に更新）
 
 写真が届いたら、下の「期待するファイル名」で **`assets/img/`** に置くだけで差し替わります（HTML・CSS の変更は不要）。
 例外は代表の肖像 1 点のみ（`assets/portrait.jpg`、クラス名を 1 つ外す作業あり）。
 
 置き方：Finder で `Documents/euniverse-site/assets/img/` を開き、同じ名前で上書き → GitHub Desktop で commit → push。
 
-## A. まだ仮画像（灰色の枠）のもの — 8 点
+## 取り込み結果（2026-09-20、Drive「website images」より）
+
+| 枠 | 使ったファイル | 判定 |
+|---|---|---|
+| Gallery 1〜3（Home） | `home/desktop/Image 1 (1).jpg` `Image 2.jpg` `Image 3 (2).jpg` | ✅ 使用（656×765・Figma 書き出し） |
+| Selected work 1〜3（What we do） | `what we do/desktop/Image 1 (1).jpg` `Image 2.jpg` `Image 3 (2).jpg` | ✅ 使用（656×623、`work-*.jpg` として別ファイル） |
+| 03 Digital Direction の全幅写真 | `what we do/desktop/pexels-artempodrez-4884106 1 (2).png` | ✅ 使用 |
+| Maryam の肖像 | `what we do/desktop/Maryam.png` | ✅ 使用（許可済み） |
+| Noor 3 枚目 | `Noor/desktop/pexels-alfred-franz-114875410-31171037 1.png` | ✅ 使用 |
+| 02 Brand & Identity の全幅写真 | `what we do/desktop/ChatGPT Image Sep 8, 2026….png` | ❌ 生成画像のため不使用。同フォルダの Pexels は他枠で使用中 → **仮画像のまま** |
+| 代表の肖像 | `company/desktop/Image (1).png` | ❌ 不使用。名前に ChatGPT を含まないが、tablet 版が `ChatGPT Image Jul 4…` で同一構図＝生成画像 → **暫定の実写のまま** |
+
+## A. まだ仮画像（灰色の枠）のもの — 8 点 → **残り 1 点＋暫定 1 点**
 
 | # | ページ | 場所 | 期待するファイル名 | 推奨サイズ（横×縦 px） | 形式 | 置くだけで差し替わるか |
 |---|---|---|---|---|---|---|
