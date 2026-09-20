@@ -14,10 +14,10 @@
 | 03 Digital Direction の全幅写真 | `what we do/desktop/pexels-artempodrez-4884106 1 (2).png` | ✅ 使用 |
 | Maryam の肖像 | `what we do/desktop/Maryam.png` | ✅ 使用（許可済み） |
 | Noor 3 枚目 | `Noor/desktop/pexels-alfred-franz-114875410-31171037 1.png` | ✅ 使用 |
-| 02 Brand & Identity の全幅写真 | `what we do/desktop/ChatGPT Image Sep 8, 2026….png` | ❌ 生成画像のため不使用。同フォルダの Pexels は他枠で使用中 → **仮画像のまま** |
+| 02 Brand & Identity の全幅写真 | `what we do/desktop/ChatGPT Image Sep 8, 2026….png` → 代わりに Brand Assets 直下の `IMG_1457.jpeg`（赤煉瓦の外壁・実写） | ❌ 生成画像は不使用 → ✅ 実写を右 22% トリミング（通行人・看板を除去）、2160px・JPEG 80・EXIF 除去で使用 |
 | 代表の肖像 | `company/desktop/Image (1).png` | ❌ 不使用。名前に ChatGPT を含まないが、tablet 版が `ChatGPT Image Jul 4…` で同一構図＝生成画像 → **暫定の実写のまま** |
 
-## A. まだ仮画像（灰色の枠）のもの — 8 点 → **残り 1 点＋暫定 1 点**
+## A. まだ仮画像（灰色の枠）のもの — 8 点 → **残り 0 点**（代表の肖像のみ暫定の実写）
 
 | # | ページ | 場所 | 期待するファイル名 | 推奨サイズ（横×縦 px） | 形式 | 置くだけで差し替わるか |
 |---|---|---|---|---|---|---|
