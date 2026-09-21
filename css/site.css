@@ -737,3 +737,12 @@ select.field__input:invalid, select.field__input.is-placeholder { color: var(--g
   .light-card .l1 { font-size: 30px; }
   .light-card .l2 { font-size: 20px; }
 }
+/* 2026-09-21 mobile fixes after designer review (Home) */
+@media (max-width: 640px) {
+  /* Who we are: the orbit diagram fits the viewport; the blue circle is no longer cut */
+  .orbit { width: 100%; max-width: none; height: auto; margin: 10px 0 0; }
+  .orbit text { font-size: 30px; }
+  /* What we do: the giant wordmark scales with the screen and clears the symbol */
+  .services__mark .word { font-size: min(15vw, 66px); left: 0; }
+  .services__mark .mini-orbit { width: 72px; height: 43px; right: 6px; }
+}
