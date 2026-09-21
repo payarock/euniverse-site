@@ -72,3 +72,12 @@
   if (closeBtn) closeBtn.addEventListener('click', function () { setMenu(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 })();
+
+/* 6. Header scrolled state: adds .is-scrolled once the page has moved, so the symbol gets a disc (see site.css) */
+(function () {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  var sync = function () { header.classList.toggle('is-scrolled', window.scrollY > 24); };
+  sync();
+  window.addEventListener('scroll', sync, { passive: true });
+})();
