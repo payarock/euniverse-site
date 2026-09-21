@@ -197,6 +197,22 @@ GitHub Desktop の **History** タブで、取り消したいコミットを右�
 - push でエラー → いったん **Fetch origin** → **Pull origin** してから再度 Push
 - 「Conflict」と出た → 同じファイルを別の場所でも直している。触らずに相談する
 
+### 6-1. GitHub のウェブ画面で直接直した場合（必ず先に pull）
+
+github.com のファイル画面（鉛筆アイコン → Commit changes）で直すと、その変更は **GitHub 側にだけ** あり、手元の `Documents/euniverse-site` には入っていません。この状態で Claude Code や GitHub Desktop で作業を始めると、古いファイルを土台に直してしまい、push のときに Conflict になります。
+
+ルール：**GitHub のウェブで直した後、次に Claude Code で作業する前に必ず pull する。**
+
+- Claude Code なら、最初の指示に「まず `git pull origin main` して」と一言入れる（またはターミナルで下を実行）
+  ```
+  git pull origin main
+  ```
+- GitHub Desktop なら、上部の **Fetch origin** → **Pull origin** を押してから作業を始める
+
+確認のしかた：`git log --oneline -3` の先頭が、ウェブで直したコミットになっていれば手元は最新です。
+
+（実例：2026-09-21、ウェブで6コミット直したあと手元が遅れていたため、作業前に pull してから続けた）
+
 ---
 
 ## 7. ローカルで確認する方法（push する前に見る）
