@@ -759,3 +759,9 @@ select.field__input:invalid, select.field__input.is-placeholder { color: var(--g
 @media (max-width: 640px) {
   .site-header__logo { width: 44px; height: 44px; }
 }
+
+/* 2026-09-21 header discs: near-solid so scrolling text no longer shows through (symbol + icon buttons) */
+.site-header.is-scrolled .site-header__logo,
+.icon-btn { background: rgba(247,246,242,.94); }
+.site-header--light.is-scrolled .site-header__logo,
+.site-header--light .icon-btn { background: rgba(18,18,18,.55); }
