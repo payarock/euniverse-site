@@ -9,8 +9,8 @@
 
 | 枠 | 使ったファイル | 判定 |
 |---|---|---|
-| Gallery 1〜3（Home） | `home/desktop/Image 1 (1).jpg` `Image 2.jpg` `Image 3 (2).jpg` | ✅ 使用（656×765・Figma 書き出し） |
-| Selected work 1〜3（What we do） | `what we do/desktop/Image 1 (1).jpg` `Image 2.jpg` `Image 3 (2).jpg` | ✅ 使用（656×623、`work-*.jpg` として別ファイル） |
+| Gallery 1〜3（Home） | `2X version/Gallery/Image 1 (1).jpg` `Image 2.jpg` `Image 3 (2).jpg`（2026-09-21 差し替え） | ✅ 使用（875×1020 ＝ デザイン枠 437px のちょうど2倍。JPEG 80・EXIF 除去。以前は 656×765） |
+| Selected work 1〜3（What we do） | `2X version/selected work/Image 1 (1).jpg` `Image 2.jpg` `Image 3 (2).jpg`（2026-09-21 差し替え） | ✅ 使用（875×830、`work-*.jpg` として別ファイル。以前は 656×623） |
 | 03 Digital Direction の全幅写真 | `what we do/desktop/pexels-artempodrez-4884106 1 (2).png` | ✅ 使用 |
 | Maryam の肖像 | `what we do/desktop/Maryam.png` | ✅ 使用（許可済み） |
 | Noor 3 枚目 | `Noor/desktop/pexels-alfred-franz-114875410-31171037 1.png` | ✅ 使用 |
