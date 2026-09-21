@@ -747,6 +747,7 @@ select.field__input:invalid, select.field__input.is-placeholder { color: var(--g
   .services__mark .word { font-size: min(15vw, 66px); left: 0; }
   .services__mark .mini-orbit { width: 72px; height: 43px; right: 6px; }
 }
+
 /* 2026-09-21 fixed header: once the page has scrolled, the symbol gets the same translucent disc as the icon buttons, so body text never runs under it */
 .site-header__logo { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; transition: background .25s ease, box-shadow .25s ease; }
 .site-header.is-scrolled .site-header__logo {
